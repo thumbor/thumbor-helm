@@ -42,7 +42,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
           - --conf=/conf/thumbor/thumbor.conf
+          {{- if .Values.thumbor_key.manage }}
           - --keyfile=/conf/thumbor/thumbor.key
+          {{- end }}
           - --use-environment=true
           - -d
           - -l=warning
