@@ -43,10 +43,10 @@ spec:
             - /bin/sh
             - -c
             - >
-              COUNT=0
+              COUNT=0;
               while [ $(echo -e "AUTH $REDIS_PASSWORD\r\nPING\r\n" | nc $REDIS_HOST $REDIS_PORT | grep -c "PONG") -ne 1 ]; do
                 if [[ $COUNT -ge 10 ]]; then
-                  echo "Waited to long restarting POD"
+                  echo "Waited to long restarting POD";
                   exit 1;
                 fi
 
