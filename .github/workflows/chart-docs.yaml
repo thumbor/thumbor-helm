@@ -1,9 +1,11 @@
 name: Update Charts docs
 
 on:
+  workflow_dispatch:
   push:
     branches:
-      - "main"
+      - main
+      - prod
     paths:
       - "charts/**"
 
