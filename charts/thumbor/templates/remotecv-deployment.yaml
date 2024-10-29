@@ -52,7 +52,7 @@ spec:
 
                 echo "Waiting for Redis...";
                 sleep 1;
-                ((COUNT++))
+                COUNT=$((COUNT+1))
               done
           env:
             {{- get (fromYaml (include "thumbor.envVars" .)) "env" | toYaml | nindent 12 -}}
